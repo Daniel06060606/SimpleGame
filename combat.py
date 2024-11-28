@@ -1,10 +1,13 @@
 from random import randint
 from utils import clear
+
 from Animations import fireballAni, fightAni, no_damage_fightAni, no_damage_fireballAni
+
 
 
 def fight(hero):
     print("Hero decided to fight with a goblin...")
+
 
     if hero["fireball"]:
         # Fireball attack
@@ -42,6 +45,34 @@ def fight(hero):
             hero["superpotion"] += 1
             print("Hero found a 🏺 superpotion!")
 
+
+
+    damage = randint(0, 30)
+    newxp = randint(5, 40)
+    hero["hp"] -= damage
+    hero["xp"] += newxp
+
+    if hero["fireball"]:
+        damage = randint(0, 20)
+        newxp = randint(10, 50)
+
+        print("hero burnt goblin to the crisp 👨‍🍳")
+
+    print("hero won the fight and got")
+
+    if hero["spellbook"]:
+        found_superpotion = randint(0, 100) <= 15  # 15% chance to find superpotion
+
+        if found_superpotion:
+            hero["superpotion"] += 1
+            print("hero found a 🏺 superpotion!")
+
+    if damage == 0:
+        print("hero easily defeated goblin!😎")
+    else:
+        print(f"{damage} damage 🤕")
+
+    print(f"⭐ {newxp} XP!")
 
     print(f"🩵 Current HP: {hero['hp']}, ⭐XP: {hero['xp']}")
 

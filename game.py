@@ -71,7 +71,11 @@ def startgame():
         clear()
 
         if day == 10:
+
             msg = f"{name} has survived the dungeon and found an exit!"
+
+            msg = f"{name} has survived the dungeon"
+
             end_game(msg)
 
 
