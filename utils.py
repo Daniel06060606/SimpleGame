@@ -6,3 +6,4 @@ def clear():
         os.system('cls')
     else:  # Unix/Linux/MacOS
         os.system('clear')
+

@@ -1,17 +1,18 @@
 from time import sleep
 from utils import clear
 import combat
+from Story import story_1, story_2, story_3, story_4
 
 hero = {  # dictionary for hero
     "hp": 100,
     "xp": 0,
+    "healing_potion": 0,
     "superpotion": 0,
     "spellbook": False,
     "fireball": False
 }
 name = "Hero"
 day = 0
-
 
 def prepare_game():
     global name
@@ -48,9 +49,24 @@ def startgame():
                 input("[press ENTER to continue]")
                 clear()
 
+        if day == 2:
+            story_1()
+
+        if day == 4:
+            story_2()
+            escape()
+
+
         if day == 5:
-            print("📔 Hero found a spellbook!")
+            print(f"📔 {name} found a spellbook!")
             hero["spellbook"] = True
+
+        if day== 7:
+            story_3()
+
+
+        if day == 9:
+            story_4()
 
         combat.event(hero)
         if hero["hp"] <= 0:
@@ -72,9 +88,7 @@ def startgame():
 
         if day == 10:
 
-            msg = f"{name} has survived the dungeon and found an exit!"
-
-            msg = f"{name} has survived the dungeon"
+            msg = f"{name} has purged the dungeon!"
 
             end_game(msg)
 
@@ -85,6 +99,7 @@ def reset():
     hero = {
         "hp": 100,
         "xp": 0,
+        "healing_potion": 0,
         "superpotion": 0,
         "spellbook": False,
         "fireball": False
@@ -103,10 +118,20 @@ def end_game(msg):
 def showstat():
     print(f"🩵Current HP: {hero['hp']}, "
           f"⭐XP: {hero['xp']}, "
+          f"healing_potion: {hero['healing_potion']}, "
           f"⚱️Superpotion: {hero['superpotion']}, "
           f"📔Spellbook: {hero['spellbook']}, "
           f"🔥Fireball: {hero['fireball']}"
           )
+
+def escape():
+    run_away = input("Do you want to run away? [y/n] ").lower()
+    if run_away == '' or 'y' in run_away:
+        print(f"{name} ran away in fear from the dungeon")
+        showstat()
+        prepare_game()
+    else:
+        print(f"{name} overcame his fears and got rid of the voices")
 
 
 prepare_game()

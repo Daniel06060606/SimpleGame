@@ -3,7 +3,9 @@ import os
 from utils import clear
 
 
-def play(animation, speed=0.2):
+
+
+def play(animation, speed=0.5):
     for step in animation:
         clear()
         print()
@@ -36,10 +38,10 @@ fightAni = [
 no_damage_fightAni = [
     '😠       👹',
     '😠   👹',
-    '🤸‍♂️🤛👹',  #hero dodged the attack
+    '🤸‍♂️🤛👹',
     '😠🗡👹',
     '😠  💀'
-]
+]       #Hero dodged the attack
 
 no_damage_fireballAni = [
 	'😠      👹',
@@ -50,4 +52,4 @@ no_damage_fireballAni = [
 	'😠    🔥👹',
 	'😠      💥',
 	'😠      💀'
-]
+] #Launched the fireball before enemy could react
