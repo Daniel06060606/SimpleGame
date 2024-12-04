@@ -2,7 +2,8 @@ import os
 from time import sleep
 
 def story_1():
-    print("As you wake up, you start hearing inaudible voices saying something to you. You don't know if this voices are in your head or are they from the deep darkness of this dungeon...")
+    print("As you wake up, you start hearing inaudible voices saying something to you.\n"
+          "You don't know if this voices are in your head or are they from the deep darkness of this dungeon...")
 
 def story_2():
     print("You hear the voices again but now you can partly understand them")
@@ -16,10 +17,12 @@ def story_4():
     print("The chill that you felt earlier is starting to intensify with every step you take, you can feel something dark and malevolent there down there ")
 
 def boss_talk():
+    print("as you walk into the room, you can see a lot of goblins laying dead and all their limbs cut off")
+    sleep(1)
     print("???: So, you are finally here. I've been waiting")
     sleep(1)
     print("You see a tall and muscular man with four arms and four eyes.")
     sleep(1)
     print("What are you??")
-    sleep(0.5)
+    sleep(1)
     print("???: Your kind calls me The King of Curses. But that's enough... Now lets fight!")
