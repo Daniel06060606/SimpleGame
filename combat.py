@@ -95,7 +95,7 @@ def boss_fight(hero):
         sleep(2)
 
         if not boss.is_alive():
-            print(f"{boss.name}: THIS ISN'T. OVER I WON'T DIE TO SOME WEAKLING LIKE YOU")
+            print(f"{boss.name}: THIS ISN'T OVER. I WON'T DIE TO SOME WEAKLING LIKE YOU")
             sleep(2)
             print(f"{hero.name} dodges his attack and uses BLACK FLASH to end him!")
             sleep(2)
